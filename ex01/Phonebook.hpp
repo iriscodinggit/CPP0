@@ -33,11 +33,11 @@ class Phonebok
             Contact users[8];
 };
 
-void    addContact(Contact *user_slot);
+void    addContact(Contact &user_slot);
 void    addData(Contact &user, void (Contact::*function)(std::string), std::string message);
-void    searchContact(PhoneBook *Book);
-void    displayContact(Phonebook *Book, int i);
+void    searchContact(PhoneBook &Book);
+void    displayContact(Phonebook &Book, int i);
 void    truncate(std::string data);
-void    fullDisplay(Phonebook *Book, int i);
+void    fullDisplay(Phonebook &Book, int i);
 
 #endif
