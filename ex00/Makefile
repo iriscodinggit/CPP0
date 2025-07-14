@@ -1,17 +1,16 @@
-NAME    = megaphone
-C+	    = c++
-CFLAG   = -Wall -Werror -Wextra -std=c++98
+NAME    = Brainz
+CFLAG   = c++ -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
-SOURCES = megaphone.cpp
+SOURCES =  main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJECTS = $(SOURCES:%.cpp=%.o)
 PINK = \033[38;5;218m
 
 %.o: %.cpp
-	@$(C+) $(CFLAG) -c $< -o $@
+	@$(CFLAG) -c $< -o $@
 
 $(NAME): $(OBJECTS)
-	@$(C+) $(CFLAG) $(OBJECTS) -o $(NAME)
-	@echo "$(PINK)📣 Megaphone compiled! Usage -> ./megaphone [your text]"
+	@$(CFLAG) $(OBJECTS) -o $(NAME)
+	@echo "$(PINK)🧟🧠 Brainz compiled! Usage -> ./Brainz"
 
 clean : 
 	@$(RM) $(OBJECTS)

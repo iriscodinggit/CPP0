@@ -1,7 +1,7 @@
-NAME    = Moar_Brainz
+NAME    = Hi_this_is_brain
 CFLAG   = c++ -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
-SOURCES =  main.cpp Zombie.cpp zombieHorde.cpp
+SOURCES =  main.cpp
 OBJECTS = $(SOURCES:%.cpp=%.o)
 PINK = \033[38;5;218m
 
@@ -10,7 +10,7 @@ PINK = \033[38;5;218m
 
 $(NAME): $(OBJECTS)
 	@$(CFLAG) $(OBJECTS) -o $(NAME)
-	@echo "$(PINK)🧟🧠 Moar Brainz! compiled! Usage -> ./Moar_Brainz"
+	@echo "$(PINK)🧟🧠 HI THIS IS BRAIN compiled! Usage -> ./Hi_this_is_brain"
 
 clean : 
 	@$(RM) $(OBJECTS)
