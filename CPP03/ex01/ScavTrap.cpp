@@ -13,16 +13,15 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    _name = name;
-    _hitPoints = 10;
-    _energyPoints = 10;
-    _attackDamage = 0;
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage = 20;
     std::cout << "Constructor for ScavTrap " << _name << " has been called" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "Destructor has been called for ScavTrap" << std::endl;
+    std::cout << "Destructor has been called for ScavTrap " << _name << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& originalObject)

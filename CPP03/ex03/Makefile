@@ -1,7 +1,7 @@
 NAME    = NowItsWeird
 CFLAG   = c++ -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
-SOURCES =  main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp #don't include hpp!
+SOURCES =  main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJECTS = $(SOURCES:%.cpp=%.o)
 PINK = \033[38;5;218m
 

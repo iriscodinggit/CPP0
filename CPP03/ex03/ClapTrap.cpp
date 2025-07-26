@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-    _name = "RandomClap";
+    _name = "RandomTrap";
     _hitPoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
@@ -24,7 +24,7 @@ ClapTrap::~ClapTrap()
 }
 
 ClapTrap::ClapTrap(const ClapTrap& originalObject)
-    :_name(originalObject._name),                   //i use initialisation list because if we define them inside of the brackets, if would first initialise with default and THEN assign the values (two steps), isntead of directly assigning (one step)
+    :_name(originalObject._name),                   //i use initialisation list because if we define them inside of the brackets, if would first initialise with default and THEN assign the values (two steps), instead of directly assigning (one step)
     _hitPoints(originalObject._hitPoints),
     _energyPoints(originalObject._energyPoints),
     _attackDamage(originalObject._attackDamage)
@@ -84,13 +84,7 @@ void        ClapTrap::beRepaired(unsigned int amount)
         std::cout << "😥 Cannot be repaired!" << _name << "has no Energy Points left!" << std::endl;
         return ;
     }
-    else if((_hitPoints + amount > 10))
-    {
-        _hitPoints = 10;
-        std::cout << "💚 " << _name << " recovered maximum health (10)" << std::endl;
-        return ;
-    }
     _hitPoints = _hitPoints + amount;
     _energyPoints--;
-    std::cout << "💚 " << _name << " recovered " << amount << " health points. Health/hit points left: " << _hitPoints << std::endl;
+    std::cout << "💚 " << _name << " gained " << amount << " health points. Health/hit points left: " << _hitPoints << std::endl;
 }

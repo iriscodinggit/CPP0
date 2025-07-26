@@ -2,21 +2,23 @@
 
 //takeDamage y beRepaired los he quitado del .hpp porque no cambian del .cpp de ClapTrap y los heredan
 
-ScavTrap::ScavTrap() : ClapTrap()
+void ScavTrap::initStats()
 {
-    _name = "RandomScav";
     _hitPoints = 100;
     _energyPoints = 50;
-    _attackDamage = 20;
+    if(_attackDamage != 30)
+        _attackDamage = 20;
+}
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+    initStats();
     std::cout << "Default constructor for ScavTrap " << _name << " has been called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    _name = name;
-    _hitPoints = 10;
-    _energyPoints = 10;
-    _attackDamage = 0;
+    initStats();
     std::cout << "Constructor for ScavTrap " << _name << " has been called" << std::endl;
 }
 
@@ -34,13 +36,6 @@ ScavTrap::ScavTrap(const ScavTrap& originalObject)
 ScavTrap&   ScavTrap::operator=(const ScavTrap& originalObject)
 {
     ClapTrap::operator=(originalObject); //aqui no puedo hacer como en las anteriores que lo añadia con : justo despues de la declaración, eso solo se puede hacer en des/constructores. En funciones normales, hay que llamarlo dentro de los brackets
-    if (this != &originalObject) //this i a pointer to the current object
-    {
-        _name = originalObject._name;
-        _hitPoints = originalObject._hitPoints;
-        _energyPoints = originalObject._energyPoints;
-        _attackDamage = originalObject._attackDamage;
-    }
     std::cout << "Assignment operator overload has been called for ScavTrap." << std::endl;
     return(*this);
 }
@@ -58,7 +53,7 @@ void        ScavTrap::attack(const std::string& target)
         return ;
     }
     _energyPoints--;
-    std::cout << "🥊 ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+    std::cout << "🥊 " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate()

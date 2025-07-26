@@ -84,13 +84,7 @@ void        ClapTrap::beRepaired(unsigned int amount)
         std::cout << "😥 Cannot be repaired!" << _name << "has no Energy Points left!" << std::endl;
         return ;
     }
-    else if((_hitPoints + amount > 10))
-    {
-        _hitPoints = 10;
-        std::cout << "💚 " << _name << " recovered maximum health (10)" << std::endl;
-        return ;
-    }
     _hitPoints = _hitPoints + amount;
     _energyPoints--;
-    std::cout << "💚 " << _name << " recovered " << amount << " health points. Health/hit points left: " << _hitPoints << std::endl;
+    std::cout << "💚 " << _name << " gained " << amount << " health points. Health/hit points left: " << _hitPoints << std::endl;
 }

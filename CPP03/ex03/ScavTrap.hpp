@@ -3,8 +3,10 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap //added virtual to make sure there's just one claptrap initialised
 {
+    private:
+            void    initStats();
     public:
             ScavTrap();
             ScavTrap(std::string name);
