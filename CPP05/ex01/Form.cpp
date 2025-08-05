@@ -63,12 +63,12 @@ int Form::getGradeToExec() const
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-    return("⚠️  Grade is too high!\n");
+    return("Grade is too high!\n");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-    return("⚠️  Grade is too low!\n");
+    return("Grade is too low!\n");
 }
 
 std::ostream& operator<<(std::ostream& outputStream, const Form& otherForm)

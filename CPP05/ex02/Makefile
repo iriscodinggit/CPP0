@@ -1,7 +1,7 @@
-NAME    = FormUpMaggots
+NAME    = NoYouNeedForm28B
 CFLAG   = c++ -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
-SOURCES =  main.cpp Bureaucrat.cpp Form.cpp #don't include hpp!
+SOURCES =  sources/main.cpp sources/Bureaucrat.cpp sources/AForm.cpp sources/ShrubberyCreationForm.cpp sources/RobotomyRequestForm.cpp sources/PresidentialPardonForm.cpp #don't include hpp!
 OBJECTS = $(SOURCES:%.cpp=%.o)
 PINK = \033[38;5;218m
 %.o: %.cpp

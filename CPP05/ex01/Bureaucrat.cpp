@@ -63,12 +63,12 @@ void Bureaucrat::decreaseGrade()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return("⚠️  Grade is too high!");
+    return("Grade is too high!");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return("⚠️  Grade is too low!");
+    return("Grade is too low!");
 }
 
 void Bureaucrat::signForm(Form &document)
@@ -80,8 +80,8 @@ void Bureaucrat::signForm(Form &document)
     }
     catch(const std::exception& error)
     {
-        std::cerr << "⚠️  Form has not been signed" << std::endl;
-        std::cout << _name << " couldn't sign " << document.getDocName() << " because: " << error.what();
+        std::cerr << "🚨 Form has not been signed" << std::endl;
+        std::cout << "🚨 " << _name << " couldn't sign " << document.getDocName() << " because: " << error.what();
     }
     
 }
