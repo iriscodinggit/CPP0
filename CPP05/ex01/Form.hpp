@@ -27,12 +27,12 @@ class Form
             class GradeTooHighException : public std::exception
             {
                 public:
-                        virtual const char* what() const throw(); //throw keyword tells the compiler that the function is guaranteed to never throw an exception
+                        const char* what() const throw(); //throw keyword tells the compiler that the function is guaranteed to never throw an exception
             };
             class GradeTooLowException : public std::exception
             {
                 public:
-                        virtual const char* what() const throw();
+                        const char* what() const throw();
             };
 };
 std::ostream& operator<<(std::ostream& outputStream, const Form &otherForm);

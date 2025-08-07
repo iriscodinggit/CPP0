@@ -2,9 +2,9 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "AForm.hpp"
+#include "AForm.hpp" //lo incluimos para que bureaucrat pueda usar la funcion publica de execute
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -22,7 +22,7 @@ class Bureaucrat
             int         getGrade() const;
             void        increaseGrade();
             void        decreaseGrade();
-            void        signForm(Form &document);
+            void        signForm(AForm &document);
             void        executeForm(AForm const & otherform) const;
 
             //Exceptions

@@ -3,6 +3,9 @@
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+#include <ctime> //para time(NULL) en robotomy.cpp)
+#include <fstream> //para ofstream (output file stream) en ascii tree (shrubbery.cpp)
+#include <cstdlib> //para rand() y srand(time(NULL) en robotomy.cpp)
 
 class Bureaucrat;
 
@@ -28,13 +31,19 @@ class AForm
             class GradeTooHighException : public std::exception
             {
                 public:
-                        virtual const char* what() const throw(); //throw keyword tells the compiler that the function is guaranteed to never throw an exception si devolviese un int sería throw(int) pero como está vacío no devuelve nada. En c11 ya no se usa throw, se usa noexception
+                        const char* what() const throw(); //throw keyword tells the compiler that the function is guaranteed to never throw an exception si devolviese un int sería throw(int) pero como está vacío no devuelve nada. En c11 ya no se usa throw, se usa noexception
             };
             class GradeTooLowException : public std::exception
             {
                 public:
-                        virtual const char* what() const throw();
+                        const char* what() const throw();
             };
+            class FormNotSigned : public std::exception
+            {
+                public:
+                        const char *what() const throw();
+            };
+            
 };
 std::ostream& operator<<(std::ostream& outputStream, const AForm &otherForm);
 
