@@ -5,7 +5,7 @@
 #include <iostream>
 #include <ctime> //para time(NULL) en robotomy.cpp)
 #include <fstream> //para ofstream (output file stream) en ascii tree (shrubbery.cpp)
-#include <cstdlib> //para rand() y srand(time(NULL) en robotomy.cpp)
+#include <cstdlib> //para rand() y srand(time(NULL) en robotomy.cpp) las siglas significa c standard library
 
 class Bureaucrat;
 
@@ -21,7 +21,7 @@ class AForm
             AForm(std::string name, bool signedStatus, int gradeToSign, int gradeToExec);
             AForm(const AForm& otherForm);
             AForm& operator=(const AForm& other);
-            ~AForm();
+            virtual             ~AForm();
             std::string         getDocName() const;
             bool                getSignedStatus() const;
             int                 getGradeToSign() const;

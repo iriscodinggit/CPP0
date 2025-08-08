@@ -1,4 +1,5 @@
 #include "../headers/Bureaucrat.hpp"
+#include "../headers/Intern.hpp"
 #include "../headers/AForm.hpp"
 #include "../headers/ShrubberyCreationForm.hpp"
 #include "../headers/RobotomyRequestForm.hpp"
@@ -8,20 +9,14 @@ int main(void)
 {
     try
     {
-        //enough grade, modify 1 for 150 for exceptions or for out of range stuff
-        Bureaucrat MichaelScott("MichaelScott", 1);
-        //Bureaucrat MichaelScott("MichaelScott", 150);
-        PresidentialPardonForm  PardonForm("Thanos");
-        RobotomyRequestForm     RoboForm("WALL-E");
-        ShrubberyCreationForm   TreeForm("Minessota National Park");
-        MichaelScott.signForm(TreeForm);
-        MichaelScott.executeForm(TreeForm);
+        Bureaucrat  MichaelScott("MichaelScott", 1);
+        Intern      Noob;
         std::cout << std::endl;
-        MichaelScott.signForm(RoboForm);
-        MichaelScott.executeForm(RoboForm);
+        AForm *newForm = Noob.makeForm("robotomy request", "R2-D2");
         std::cout << std::endl;
-        MichaelScott.signForm(PardonForm);
-        MichaelScott.executeForm(PardonForm);
+        newForm->beSigned(MichaelScott);
+        newForm->execute(MichaelScott);
+        delete newForm;
         std::cout << std::endl;
     }
     catch(const std::exception &error) // captura tanto las de Bureaucrat como de Form
