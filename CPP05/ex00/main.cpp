@@ -4,8 +4,8 @@ int main(void)
 {
     try
     {
-        Bureaucrat Iris("Iris", 10);
-        Iris.increaseGrade();
+        Bureaucrat MichaelScott("MichaelScott", 10);
+        MichaelScott.increaseGrade();
     }
     catch(const Bureaucrat::GradeTooHighException &error)
     {
@@ -18,8 +18,8 @@ int main(void)
     std::cout << std::endl;
     try
     {
-        Bureaucrat Helios("Helios", 150);
-        Helios.decreaseGrade();
+        Bureaucrat JimHalpert("JimHalpert", 150);
+        JimHalpert.decreaseGrade();
     }
     catch(const Bureaucrat::GradeTooHighException &error)
     {
@@ -31,8 +31,8 @@ int main(void)
     }
     try
     {
-        Bureaucrat Elon("Elon", 1);
-        Elon.increaseGrade();
+        Bureaucrat PamBeesly("PamBeesly", 1);
+        PamBeesly.increaseGrade();
     }
     catch(const Bureaucrat::GradeTooHighException &error)
     {
