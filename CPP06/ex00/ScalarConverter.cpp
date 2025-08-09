@@ -1,7 +1,11 @@
 #include "ScalarConverter.hpp"
-
-std::cout << "Cannot display that conversion." << std::endl;
-
+//buscar librerias: size
+void    ScalarConvert::convert(std::string value)
+{
+    if(value.size() == 1 && !isdigit(literal[0]))
+    else
+        std::cout << "Cannot display that conversion." << std::endl;
+}
 
 //any other overflows apart from char?
 //why is the hpp function static?
