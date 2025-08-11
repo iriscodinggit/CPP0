@@ -5,7 +5,7 @@
 #include <stdint.h> //para que?
 #include <iostream>
 
-class Serializer : public Data //why inherit from data?
+class Serializer
 {
     private:
         Serializer();

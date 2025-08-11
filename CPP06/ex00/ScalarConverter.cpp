@@ -1,5 +1,23 @@
 #include "ScalarConverter.hpp"
 
+ScalarConverter::ScalarConverter()
+{
+   std::cout << "Constructor for ScalarConvert has been called" << std::endl;
+}
+ScalarConverter::ScalarConverter(const ScalarConverter&)
+{
+    std::cout << "Copy constructor for ScalarConvert has been called" << std::endl;
+}
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter)
+{
+    std::cout << "Assignment operator overload for ScalarConvert has been called" << std::endl;
+    return(*this);
+}
+ScalarConverter::~ScalarConverter()
+{
+    std::cout << "Destructor for ScalarConvert has been called" << std::endl;
+}
+
 int checkType(std::string value)
 {
     if (value.empty())
@@ -40,7 +58,7 @@ void castParseAndDisplay(int typeCase, std::string value)
         }
         case 3: //float
         {
-            float f = strtof(value.c_str(), NULL); //we convert to double instead of to int to check overflows larger than max int and min int. we convert value to const string with (c.str because strtod needs a const). NULL is because we dont need a pointer
+            float f = strtof(value.c_str(), NULL);
             charParse(static_cast<char>(f));
             intParse(static_cast<int>(f));
             floatParse(f);
@@ -49,7 +67,7 @@ void castParseAndDisplay(int typeCase, std::string value)
         }
         case 4: //double
         {
-            double d = strtod(value.c_str(), NULL); //we convert to double instead of to int to check overflows larger than max int and min int. we convert value to const string with (c.str because strtod needs a const). NULL is because we dont need a pointer
+            double d = strtod(value.c_str(), NULL);
             charParse(static_cast<char>(d));
             intParse(static_cast<int>(d));
             floatParse(static_cast<float>(d));
@@ -73,6 +91,5 @@ void    ScalarConverter::convert(std::string value) //this is static, which mean
     castParseAndDisplay(typeCase, value); //switch that takes a number and casts, then display
 }
 
-//TRY EMPTY STRINGS
 //any other overflows apart from char 0-127 (0-31 are not printable), max/min int, inf to int, nan to int/char? Inf can be converted to double and float
 //only decimal notatiion: (doesnt mean decimals), means we just have to handle base 10 inputs, no hexadecimal, no octalm no scientifici notation

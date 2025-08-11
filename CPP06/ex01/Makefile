@@ -1,4 +1,4 @@
-NAME    = ConversionOfScalarTypes
+NAME    = Serialization
 CFLAG   = c++ -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
 SOURCES =  main.cpp Serializer.cpp #don't include hpp!

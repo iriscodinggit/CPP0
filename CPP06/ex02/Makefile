@@ -1,7 +1,7 @@
-NAME    = Serialization
+NAME    = IdentifyRealType
 CFLAG   = c++ -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
-SOURCES =  main.cpp Serializer.cpp #don't include hpp!
+SOURCES =  main.cpp Base.cpp #don't include hpp!
 OBJECTS = $(SOURCES:%.cpp=%.o)
 PINK = \033[38;5;218m
 %.o: %.cpp
