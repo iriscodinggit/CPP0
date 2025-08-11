@@ -1,28 +1,35 @@
 #ifndef SCALAR_CONVERTER_HPP
 # define SCALAR_CONEVERTER_HPP
 
+//USE LIMITS
 #include <iostream>
-#include <cstdlib> //for atof, atoi...
-#include <math.h> //for what?
+#include <math.h> //strtof, strtod...
 #include <limits>
-
-#define MAX_INT 2147483647
-#define MIN_INT -2147483648
+#include <string>
 
 class ScalarConverter
 {
     private: // i have to make them private to make them not instantiable as the subject requires
-        ScalarConverter() = delete;
-        ScalarConverter(const ScalarConverter&) = delete;
-        ScalarConverter& operator=(const ScalarConverter) = delete;
-        ~ScalarConverter() = delete;
+        ScalarConverter();
+        ScalarConverter(const ScalarConverter&);
+        ScalarConverter& operator=(const ScalarConverter);
+        ~ScalarConverter();
     public:
         static void convert(std::string value);
 };
 
-void    convertChar(std::string value);
-void    convertInt(std::string value);
-void    convertFloat(std::string value);
-void    convertDouble(std::string value);
-void    convertSpecial(std::string value);
+//check type
+bool    isChar(std::string value);
+bool    isInt(std::string value);
+bool    isFloat(std::string value);
+bool    isDouble(std::string value);
+int    isSpecial(std::string value);
+
+//parse ranges
+
+void charParse(char c);
+void intParse(long i);
+void floatParse(float f);
+void doubleParse(double d);
+
 #endif
