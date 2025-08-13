@@ -1,4 +1,4 @@
-NAME    = StartWithAFewFunctions
+NAME    = Array
 CFLAG   = c++ -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
 SOURCES =  main.cpp
