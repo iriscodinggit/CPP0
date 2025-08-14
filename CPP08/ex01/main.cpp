@@ -12,9 +12,10 @@ int main()
         vector.addNumber(9);
         vector.addNumber(11);
         //vector.addNumber(15); //throw exception
-
+        std::cout << std::endl;
         std::cout << "⭐ The shortest span is: " << vector.shortestSpan() << std::endl;
         std::cout << "⭐ The longest span is: " << vector.longestSpan() << std::endl;
+        std::cout << std::endl;
     }
     catch(std::exception& error)
     {
@@ -27,11 +28,13 @@ int main()
         for (int i = 0; i < 10000; i++)
             bigVector[i] = i;
 
-        Span bigSpan(10500);
+        Span bigSpan(10000);
         bigSpan.addNumbers(bigVector.begin(), bigVector.end());  // adds all 10000 values
 
+        std::cout << std::endl;
         std::cout << "⭐ The shortest span is: " << bigSpan.shortestSpan() << std::endl;
         std::cout << "⭐ The longest span is: " << bigSpan.longestSpan() << std::endl;
+        std::cout << std::endl;
     }
     catch(std::exception& error)
     {
