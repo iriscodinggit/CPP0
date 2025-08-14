@@ -1,32 +1,27 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
-# define MAX_VAL 750 //?
-#include <iostream>
-#include <string.h> //
+#include <cstdlib> //rand and srand
+#include <ctime> //time(NULL)
 #include <exception>
-#include <ctime> //
-#include <cstdlib> //
 
 template<typename T>
 class Array
 {
     private:
             T               *_array;
-            unsigned int    _len;
+            unsigned int    _length;
     public:
             Array();
             Array(unsigned int n);
-            Array(const Array& other);
-            Array& operator=(const Array& other);
+            Array(const Array& otherArray);
+            Array& operator=(const Array& otherArray);
             ~Array();
-            T& operator[](const unsigned int index); //?fir new[]?  or for accesing elements
-            unsigned int size() const; //to make it not modify the object
+            T& operator[](unsigned int index); //?fir new[]?  or for accesing elements
+            unsigned int size(); //getter getSize, to be able to call it on const arrays it must be const
 };
 
 #include "Array.tpp"
 
 #endif
-
-//never acces nono allocated memory
-//The purpose of this exercise is to make you implement a fully functional, type-generic dynamic array from scratch, 
+ 
