@@ -1,7 +1,7 @@
 NAME    = MutantAbomination
 CFLAG   = c++ -Wall -Werror -Wextra -std=c++98
 RM      = rm -rf
-SOURCES =  main.cpp Span.cpp
+SOURCES =  main.cpp
 OBJECTS = $(SOURCES:%.cpp=%.o)
 PINK = \033[38;5;218m
 WHITE = \033[0m

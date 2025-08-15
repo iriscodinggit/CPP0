@@ -1,3 +1,5 @@
+#include "MutantStack.hpp"
+
 int main()
 {
     MutantStack<int> mstack;
@@ -22,7 +24,26 @@ int main()
     }
     std::stack<int> s(mstack); //crea un stack a partir de mstack
    
-   //extra ADD ANOTHER TEST with list changing push with push back, what is list?
+   //extra
 
+    std::cout << std::endl << "⭐ Let's try with a list!" << std::endl;
+    std::list<int> myList;
+    myList.push_back(5);
+    myList.push_back(17);
+    std::cout << std::endl << myList.back() << std::endl;
+    myList.pop_back();
+    std::cout << myList.size() << std::endl;
+    myList.push_back(3);
+    myList.push_back(5);
+    myList.push_back(737);
+    myList.push_back(0);
+
+    std::list<int>::iterator i = myList.begin();
+    std::list<int>::iterator end = myList.end();
+    while (i != end)
+    {
+        std::cout << *i << std::endl;
+        ++i;
+    }
     return 0;
 }
